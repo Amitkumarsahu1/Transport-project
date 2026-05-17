@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: 'Inter', sans-serif;
+  background: #F5F7FA;
+}
+
+/* HIDE SCROLLBAR */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+
+  scrollbar-width: none;
+}
+
+
+/* TRUCK ANIMATION */
+
+
+
+@keyframes moveTruck {
+
+  0% {
+    left: -10%;
+  }
+
+  100% {
+    left: 110%;
+  }
+}
+
+
+
+
+
+/* ROAD LINE */
+
+.road-line {
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      #facc15 0,
+      #facc15 40px,
+      transparent 40px,
+      transparent 80px
+    );
+
+  animation:
+    roadMove 1s linear infinite;
+}
+
+@keyframes roadMove {
+
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: -80px;
+  }
+}
+
+
+
+
+
+/* FLOATING CARDS */
+
+.floating-card {
+  animation:
+    floatCard 3s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+
+  0% {
+    transform:
+      translateY(0px);
+  }
+
+  50% {
+    transform:
+      translateY(-8px);
+  }
+
+  100% {
+    transform:
+      translateY(0px);
+  }
+}
+
+
+
+
+
+/* DASHBOARD FLOAT */
+
+.floating-dashboard {
+  animation:
+    dashboardFloat 4s ease-in-out infinite;
+}
+
+@keyframes dashboardFloat {
+
+  0% {
+    transform:
+      translateY(0px);
+  }
+
+  50% {
+    transform:
+      translateY(-10px);
+  }
+
+  100% {
+    transform:
+      translateY(0px);
+  }
+}
+
+
+/* SECOND TRUCK */
+
+.truck-animation-2 {
+
+  animation:
+    moveTruck2 18s linear infinite;
+}
+
+@keyframes moveTruck2 {
+
+  0% {
+    left: -20%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+
+
+
+
+/* HEADLIGHT */
+
+/* TRUCK WRAPPER */
+
+.truck-wrapper {
+
+  position: absolute;
+
+  bottom: 10px;
+
+  left: -20%;
+
+  z-index: 30;
+
+  animation:
+    moveTruckTogether 20s linear infinite;
+}
+
+
+
+
+
+@keyframes moveTruckTogether {
+
+  0% {
+    left: -20%;
+  }
+
+  100% {
+    left: 110%;
+  }
+}
+
+
+
+
+
+/* HEADLIGHT */
+
+/* HEADLIGHT */
+
+.truck-headlight {
+
+  position: absolute;
+
+  top: 50px;
+
+  left: 90px;
+
+  width: 180px;
+
+  height: 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+
+      rgba(255,255,180,0.9),
+
+      rgba(255,255,180,0.35),
+
+      transparent
+    );
+
+  border-radius:
+    0 400px 200px 0;
+
+  filter:
+    blur(8px);
+
+  opacity: .8;
+
+  z-index: 10;
+
+  transform:
+    perspective(120px)
+    rotateY(-10deg);
+}
+
+/* TRUCK FACE RIGHT */
+
+.truck-face-right {
+
+  transform:
+    scaleX(-1);
+}
+
+@keyframes headlightMove {
+
+  0% {
+    left: -20%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+
+
+
+
+/* TYPING EFFECT */
+
+.typing-text {
+
+  display: inline-block;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border-right: 3px solid #3b82f6;
+
+  width: 0;
+
+  animation:
+    typing 4s steps(20) infinite,
+    blink .7s infinite;
+}
+
+@keyframes typing {
+
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+
+
+
+/* FLOATING PARTICLES */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      rgba(59,130,246,.15) 2px,
+      transparent 2px
+    );
+
+  background-size:
+    80px 80px;
+
+  animation:
+    particleMove 20s linear infinite;
+
+  z-index: -1;
+}
+
+@keyframes particleMove {
+
+  from {
+    transform:
+      translateY(0);
+  }
+
+  to {
+    transform:
+      translateY(-100px);
+  }
+}
